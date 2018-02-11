@@ -1,0 +1,19 @@
+The best tutorial i found online for using the TFT 1.44 is:
+
+http://henrysbench.capnfatz.com/henrys-bench/arduino-displays/arduino-1-44-in-spi-tft-display-tutorial/
+
+However is a bit outdated. The Adafruit libraries work, however they need a bit of adjustments when it comes to colors.
+These 3 libraries were sufficient for me to make the code work:
+
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <Adafruit_ST7735.h> // Hardware-specific library
+#include <SPI.h>
+
+Due to the space on the screen, the counter only displays up to deci-seconds.
+The code can be easily modified for bigger screens. The TFT 1.44 has a resolution of 128x128
+
+I cleaned up the code and added some comments to guide, however this code is far from optimal. 
+Function could be further consolidated, for example use the coordinate screen as inputs and use only one function to display text.
+I am happy how it works, it's close to real time, but i didn't bother using interrupts for precise measurement.
+
+Hope this helps you and have fun.
